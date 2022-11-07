@@ -1,6 +1,7 @@
 ## Laboratorio CI/CD Azure DevOps
 ## ♡ Luisa Valentina De la hoz Rocha ♡
 - - -
+#### Tarea 1: Configuración de los recursos de Azure
 Primero se creo el proyecto siguiendo los pasos dados en los requisitos previos del laboratorio de Azure DevOps
 ![image](https://user-images.githubusercontent.com/104604359/200205016-32402e52-3c0b-4d0c-a2c5-e4e3ff1a8618.png)
 
@@ -27,7 +28,7 @@ Repetimos el proceso anterior para crear un segundo servicio de aplicaciones par
 
 ![image](https://user-images.githubusercontent.com/104604359/200205149-10db3c5e-47da-413b-b68c-c0b1b1b91a59.png)
 
-####Tarea 2: Crear una versión continua para la etapa de control de calidad
+#### Tarea 2: Crear una versión continua para la etapa de control de calidad
 Navegamos en Piperlines | Releases  y eliminamos el piperline de lanzamiento de PartsUnlimitedE2E existente . Empezaremos de nuevo aquí.
 ![image](https://user-images.githubusercontent.com/104604359/200205182-a89d6b4f-da22-4c9b-ba8f-ce3bd22b7666.png)
 
@@ -43,7 +44,7 @@ Seleccione la suscripción de Azure que usó anteriormente para crear los recurs
 Habilite el activador de implementación continua . Agregue un filtro de rama de compilación que apunte a la rama predeterminada de la canalización de compilación . Esto iniciará la implementación cuando se complete la compilación.
 ![image](https://user-images.githubusercontent.com/104604359/200205389-4c98c800-8266-4ff8-86b6-faa03bd81458.png)
 
-####Tarea 3: Configuración de los servicios de aplicaciones de Azure
+#### Tarea 3: Configuración de los servicios de aplicaciones de Azure
 Vuelva a la pestaña del navegador abierta en Azure Portal.
 Haga clic en la pestaña Grupos de recursos en el menú de la izquierda. Localice y haga clic en el grupo partsunlimited creado anteriormente.
 En la hoja nueva, haga clic en Mostrar cadenas de conexión de base de datos .
@@ -57,7 +58,7 @@ Repita el proceso anterior para agregar la misma cadena de conexión al servicio
 ![image](https://user-images.githubusercontent.com/104604359/200205453-7f445611-f943-4f52-ad9e-59b0d54a95fb.png)
 
 
-####Tarea 4: invocar una liberación de entrega continua para el control de calidad
+#### Tarea 4: invocar una liberación de entrega continua para el control de calidad
 Vaya a PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Views/Shared/_Layout.cshtml . Este es un archivo que define el diseño general del sitio y es un buen lugar para hacer un cambio que será fácilmente visible después de la implementación.
 Localice el logotipo de Parts Unlimited y agregue el texto "v2.0" después. Esto será fácil de comprobar después de la implementación.
 ![image](https://user-images.githubusercontent.com/104604359/200205468-6fda39ab-2185-4c80-aa72-f2017f2ef63b.png)
@@ -67,7 +68,7 @@ Abra la versión más reciente de PartsUnlimitedE2E . Puede estar en cola, en pr
 
 ![image](https://user-images.githubusercontent.com/104604359/200205487-9ac264b4-5f33-442f-bbb1-59f1c19b0075.png)
 
-####Tarea 5: Crear una versión cerrada para la etapa de producción
+#### Tarea 5: Crear una versión cerrada para la etapa de producción
 A medida que los canales de lanzamiento se vuelven más sofisticados, se vuelve importante definir puertas para garantizar la calidad en todo el canal de lanzamiento. Dado que la próxima etapa en la que estamos implementando es la producción, debemos asegurarnos de incluir tanto las puertas de calidad automatizadas como una puerta de aprobación manual. Vuelva a la pestaña del navegador de canalización de versión y haga clic en Clonar en la etapa de control de calidad . Dado que la etapa de producción es prácticamente la misma, podemos reutilizar casi toda la configuración existente.
 ![image](https://user-images.githubusercontent.com/104604359/200205631-2f52b4b7-e8db-431a-9f8b-cc24d16f7aad.png)
 
